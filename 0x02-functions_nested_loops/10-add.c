@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * add - addition 
+ * add - addition
  * @m: int to be added to n
  * @n: int to be added to m
  *
