@@ -23,9 +23,9 @@ int is_prime_number(int n)
  */
 int pnum(int n, int m)
 {
-	if (n == b)
+	if (n == m)
 		return (1);
-	else if (a % b == 0)
+	else if (n % m == 0)
 		return (0);
-	return (prime2(a, b + 1));
+	return (pnum(n, m + 1));
 ]
