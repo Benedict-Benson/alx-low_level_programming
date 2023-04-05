@@ -1,31 +1,29 @@
 #include "main.h"
 
 /**
- * is_prime_number - 1 if the input integer is
- * a prime number, otherwise return 0
- * @n: int
+ * prime - Makes possible to evaluate from 1 to n
+ * @i: same number as n
+ * @j: number that iterates from 1 to n
  *
- * Return: prime numbers
+ * Return: On success 
+ */
+int prime(int i, int j)
+{
+	if (a == j)
+		return (1);
+	else if (i % j == 0)
+		return (0);
+	return (prime(i, j + 1));
+}
+/**
+ * is_prime_number - checks if a number is prime
+ * @n: Number Integer
+ *
+ * Return: On success 1.
  */
 int is_prime_number(int n)
 {
-	if (n <= 0)
+	if (n <= 1)
 		return (0);
-	return (pnum(n, 2));
+	return (prime(n, 2));
 }
-
-/**
- * pnum - real prime number
- * @n: int
- * @m: iterator
- *
- * Return: prime number
- */
-int pnum(int n, int m)
-{
-	if (n == m)
-		return (1);
-	else if (n % m == 0)
-		return (0);
-	return (pnum(n, m + 1));
-]
