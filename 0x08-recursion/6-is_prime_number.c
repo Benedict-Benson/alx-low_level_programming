@@ -9,7 +9,7 @@
  */
 int prime(int i, int j)
 {
-	if (a == j)
+	if (i == j)
 		return (1);
 	else if (i % j == 0)
 		return (0);
