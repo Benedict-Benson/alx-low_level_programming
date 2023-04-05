@@ -5,7 +5,7 @@
  * @i: same number as n
  * @j: number that iterates from 1 to n
  *
- * Return: On success 
+ * Return: On success
  */
 int prime(int i, int j)
 {
