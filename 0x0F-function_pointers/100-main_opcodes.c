@@ -11,7 +11,8 @@
 int main(int argc, char *argv[])
 {
 	int bytes, a;
-	char *arry;
+	unsigned char opcode;
+	int (*arry)(int, char **) = main;
 
 	if (argc != 2)
 	{
@@ -27,17 +28,21 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	arry = (char *)main;
 
 	for (a = 0; a < bytes; a++)
 	{
+		opcode = *(unsigned char *)arry;
+		printf("%.2x", opcode);
+
 		if (a == bytes - 1)
-		{
-			printf("%02hhx\n", arry[a]);
-			break;
-		}
-		printf("%02hhx", arry[a]);
+			continue;
+
+		printf(" ");
+
+		arry++;
 	}
+
+	printf("\n");
 
 	return (0);
 }
