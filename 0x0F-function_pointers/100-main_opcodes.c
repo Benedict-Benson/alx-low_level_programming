@@ -8,7 +8,7 @@
  *
  * Return: Always 0
  */
-int main(int argc, char argv[])
+int main(int argc, char *argv[])
 {
 	int bytes, a;
 	char *arry;
@@ -27,16 +27,16 @@ int main(int argc, char argv[])
 		exit(2);
 	}
 
-	arr = (char *)main;
+	arry = (char *)main;
 
 	for (a = 0; a < bytes; a++)
 	{
 		if (a == bytes - 1)
 		{
-			printf("%02hhx\n", arr[a]);
+			printf("%02hhx\n", arry[a]);
 			break;
 		}
-		printf("%02hhx", arr[a]);
+		printf("%02hhx", arry[a]);
 	}
 
 	return (0);
