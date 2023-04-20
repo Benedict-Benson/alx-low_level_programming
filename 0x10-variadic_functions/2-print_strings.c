@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		stn = va_arg(string, char *);
 
 		if (stn == NULL)
-			printf("(nill)");
+			printf("(nil)");
 
 		else
 			printf("%s", stn);
