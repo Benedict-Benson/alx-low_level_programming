@@ -1,0 +1,120 @@
+#include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
+
+void print_char(va_list arg);
+void print_int(va_list arg);
+void print_float(va_list arg);
+void print_string(va_list arg);
+void print_all(const char * const format, ...);
+
+/**
+ * print_char - prints anything char
+ * @arg: list of pointers pointing to var
+ * pointer
+ *
+ */
+void print_char(va_list arg)
+{
+	char characters;
+
+	characters = va_arg(arg, int);
+	printf("%c", characters);
+}
+
+/**
+ * print_int - prints int
+ * @arg: list of pointers pointingto int
+ *
+ */
+void print_int(va_list arg)
+{
+	int numbs;
+
+	numbs = va_arg(arg, int);
+	printf("%d", numbs);
+
+}
+
+/**
+ * print_float - prints floats
+ * @arg: list of pointers pointing to
+ * float pointer
+ *
+ */
+void print_float(va_list arg)
+{
+	float numbs;
+
+	numbs = va_arg(arg, double);
+	printf("%f", numbs);
+
+}
+/**
+ * print_string - prints string
+ * @arg: pointers pointing to string
+ *
+ */
+void print_string(va_list arg)
+{
+	char *stng;
+
+	stng = va_arg(arg, char *);
+
+	if (stng == NULL)
+	{
+		printf("(nill)");
+
+		return;
+	}
+
+	printf("%S", stng);
+
+}
+
+/**
+ * print_all - print anything
+ * @format: string of characters rep argmnt
+ * @...: varible no to be printed
+ *
+ */
+void print_all(const char * const format, ...)
+{
+	va_list args;
+	int i = 0, b = 0;
+
+	char *separator = " ";
+
+	printer_t funcs[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
+	};
+
+	va_start(arg, format);
+
+	while (format && (*(format + i)))
+	{
+		b = 0;
+
+		while (b < 4 && (*(format + i) != *(funcs[b].symbol)))
+			b++;
+
+		if (b < 4)
+		{
+			printf("%s", separator);
+			funcs[b].print(args);
+			separator = ", ";
+		}
+
+		i++;
+
+	}
+	printf("\n");
+
+	va_end(args);
+
+}
+
+
