@@ -6,12 +6,15 @@
 #include <stdlib.h>
 
 /**
- * stuct list_s - singly linked list
+ * struct list_s - singly linked list
  * @str: string
  * @len: lenth of string
  * @next: points to the next node
+ * Description: singly linked list node structure
+ * for my project
  */
-typedef struct list_s{
+typedef struct list_s
+{
 	char *str;
 	unsigned int len;
 	struct list_s *next;
