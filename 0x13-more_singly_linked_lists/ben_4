@@ -9,16 +9,16 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *t, *h = head;
+	listint_t *t, *h;
 
-	if (!head)
+	if (head == NULL || head->next == NULL)
 		return (NULL);
 
-	while (t && h && h->next)
-	{
-		h = h->next->next;
-		t = t->next;
+	t = head->next;
+	h = (head->next)->next;
 
+	while (h)
+	{
 		if (t == h)
 		{
 			t = h;
@@ -28,10 +28,11 @@ listint_t *find_listint_loop(listint_t *head)
 				t = t->next;
 				h = h->next;
 			}
-			return (h);
+			return (t);
 		}
 
-
+		t = t->next;
+		h = (h->next)->next;
 	}
 
 	return (NULL);
