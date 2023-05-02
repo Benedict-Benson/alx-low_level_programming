@@ -9,30 +9,30 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *t, *h;
+	listint_t *tor, *cat;
 
 	if (head == NULL || head->next == NULL)
 		return (NULL);
 
-	t = head->next;
-	h = (head->next)->next;
+	tor = head->next;
+	cat = (head->next)->next;
 
-	while (h)
+	while (cat)
 	{
-		if (t == h)
+		if (tor == cat)
 		{
-			t = h;
+			tor = head;
 
-			while (t != h)
+			while (tor != cat)
 			{
-				t = t->next;
-				h = h->next;
+				tor = tor->next;
+				cat = cat->next;
 			}
-			return (t);
+			return (tor);
 		}
 
-		t = t->next;
-		h = (h->next)->next;
+		tor = tor->next;
+		cat = (cat->next)->next;
 	}
 
 	return (NULL);
