@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * int flip_bits - returns the number of bits to be flipped in n
+ * flip_bits - returns the number of bits to be flipped in n
  * @n: 1st No provided
  * @m: 2nd No provided
  * Return: No of bits flipped
