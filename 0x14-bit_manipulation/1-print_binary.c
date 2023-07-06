@@ -22,7 +22,7 @@ void print_binary(unsigned long int n)
 	count++;
 
 	print_binary(n >>= 1);
-	
+
 	putchar('0' + No);
 }
 
