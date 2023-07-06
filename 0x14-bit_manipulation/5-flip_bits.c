@@ -5,7 +5,7 @@
  * int flip_bits - returns the number of bits to be flipped in n
  * @n: 1st No provided
  * @m: 2nd No provided
- * Return: No of bits flipped 
+ * Return: No of bits flipped
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
@@ -18,5 +18,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		xor_result >>= 1;
 	}
 
-	return count;
+	return (count);
 }
