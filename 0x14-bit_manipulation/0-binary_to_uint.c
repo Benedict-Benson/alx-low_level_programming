@@ -3,7 +3,7 @@
 
 /**
  * binary_to_uint - function conerts binary to number
- * b: pointing to a string of 1 and 0
+ * @b: pointing to a string of 1 and 0
  * Return: the conerted No
  */
 unsigned int binary_to_uint(const char *b)
@@ -17,7 +17,9 @@ unsigned int binary_to_uint(const char *b)
 		if (*b == '1')
 			decimal = (decimal << 1) | 1;
 		else if (*b == '0')
-		       decimal <<= 1;
+		{
+			decimal <<= 1;
+		}
 		else
 			return (0);
 		b++;
