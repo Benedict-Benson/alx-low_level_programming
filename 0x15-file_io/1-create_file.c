@@ -20,12 +20,21 @@ int create_file(const char *filename, char *text_content)
 			length++;
 	}
 
-	a = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	write_file = write(a, text_content, length);
-
-	if (a == -1 || write_file - 1)
-	{
+	a = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (a == -1)
 		return (-1);
+
+	if (length > 0)
+	{
+		write_file = write(a, text_content, length);
+
+		if (write_file - 1)
+		{
+			close(a);
+			return (-1);
+		}
+
+
 	}
 
 	close(a);
